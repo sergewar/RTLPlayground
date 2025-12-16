@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install dependencies
         run: sudo apt install sdcc xxd python-is-python3 libjson-c-dev
@@ -34,4 +34,4 @@ jobs:
       - name: Step 9
         run: cat rtlplayground.img >> rtlplayground.bin
       - name: Step 10
-        run: echo "Build complited"
+        run: echo "Build completed"
