@@ -13,6 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Install lsb_release
+        run: |
+          apt update
+          apt install lsb-release
+
+      - name: run lsb_release
+        run: |
+          lsb_release -a
+
       - name: Check OS version
         run: uname -a
 
