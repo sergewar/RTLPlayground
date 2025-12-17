@@ -13,5 +13,8 @@ jobs:
       - name: Install dependencies
         run: sudo apt install sdcc xxd python-is-python3 libjson-c-dev
 
+      - name: Check sdcc version
+        run: sdcc -v
+
       - name: Make project
         run: make
