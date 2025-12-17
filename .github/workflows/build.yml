@@ -16,7 +16,7 @@ jobs:
       - name: Install lsb_release
         run: |
           apt update
-          apt install lsb-release
+          apt install lsb-release -y
 
       - name: run lsb_release
         run: |
@@ -26,7 +26,7 @@ jobs:
         run: uname -a
 
       - name: Install dependencies
-        run: apt install sdcc xxd python-is-python3 libjson-c-dev
+        run: apt install sdcc xxd python-is-python3 libjson-c-dev -y
 
       - name: Check sdcc version
         run: sdcc -v
