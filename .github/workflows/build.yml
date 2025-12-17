@@ -13,25 +13,5 @@ jobs:
       - name: Install dependencies
         run: sudo apt install sdcc xxd python-is-python3 libjson-c-dev
 
-      - name: Step 1
+      - name: Make project
         run: make
-      - name: Step 2
-        run: sdas8051 -plosgff crtstart.asm
-      - name: Step 3
-        run: sdcc -mmcs51 -c rtlplayground.c
-      - name: Step 4
-        run: sdcc -mmcs51 -c rtl837x_flash.c
-      - name: Step 5
-        run: sdcc -mmcs51 -Wl-bHOME=0x100 -o rtlplayground.ihx crtstart.rel rtlplayground.rel rtl837x_flash.rel
-      - name: Step 6
-        run: objcopy --input-target=ihex -O binary rtlplayground.ihx rtlplayground.img
-      - name: Step 7
-        run: if [ -e rtlplayground.bin ]; then rm rtlplayground.bin; fi
-      - name: Step 8
-        run: |
-          echo "0000000: 00 40" 
-          xxd -r - rtlplayground.bin
-      - name: Step 9
-        run: cat rtlplayground.img >> rtlplayground.bin
-      - name: Step 10
-        run: echo "Build completed"
