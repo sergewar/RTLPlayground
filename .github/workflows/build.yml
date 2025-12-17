@@ -26,7 +26,7 @@ jobs:
         run: uname -a
 
       - name: Install dependencies
-        run: apt install sdcc xxd python-is-python3 libjson-c-dev -y
+        run: apt install make sdcc xxd python-is-python3 libjson-c-dev -y
 
       - name: Check sdcc version
         run: sdcc -v
